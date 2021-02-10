@@ -2,14 +2,24 @@
 
 ```
 As a user
-To have control of my temprature
+To have control of my temperature
 I would like my thermostat to start at 20 degrees
 ```
 ```
 As a user
 To make my room warmer
-I would like to increase my temprature on the thermostat
+I would like to increase my temperature on the thermostat
+```
+```
+As a user
+To make my room colder
+I would like to decrease my temperature on the thermostat
+```
 
+```As a user
+So I won't freeze to death
+I don't want my temperature to go lower than 10 degrees. EVER.
+```
 Thermostat starts at 20 degrees
 You can increase the temperature with an up function
 You can decrease the temperature with a down function
