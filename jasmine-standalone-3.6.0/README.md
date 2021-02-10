@@ -16,14 +16,17 @@ To make my room colder
 I would like to decrease my temperature on the thermostat
 ```
 
-```As a user
+```
+As a user
 So I won't freeze to death
 I don't want my temperature to go lower than 10 degrees. EVER.
 ```
-Thermostat starts at 20 degrees
-You can increase the temperature with an up function
-You can decrease the temperature with a down function
-The minimum temperature is 10 degrees
+```
+As a user
+Because I love my planet
+I want to turn power saving mode on and have 25 degrees as the maximum
+```
+
 If power saving mode is on, the maximum temperature is 25 degrees
 If power saving mode is off, the maximum temperature is 32 degrees
 Power saving mode is on by default but it can also be turned off

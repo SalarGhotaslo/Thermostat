@@ -22,4 +22,9 @@ describe('Thermostat', function () {
     it('error message if the temperature < 10 degrees', function() {
       expect(function(){thermostat.down(11); }).toThrowError('This is too low bro!');
     });
+
+    it('turns power saving mode on', function() {
+      thermostat.powerSavingModeOn();
+      expect(thermostat.powerSavingMode()).toEqual(true);
+    });
 });
