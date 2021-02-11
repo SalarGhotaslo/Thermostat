@@ -1,0 +1,14 @@
+.Low {
+  color: green;
+  font-weight: bold;
+}
+
+.Medium {
+  color: orange;
+  font-weight: bold;
+}
+
+.High {
+  color: red;
+  font-weight: bold;
+}
