@@ -8,15 +8,15 @@ describe('Thermostat', function () {
     });
 
     it('defaults at 20 degrees', function () {
-        expect(thermostat.degrees).toEqual(20);
+        expect(thermostat.currentTemperature()).toEqual(20);
     });
     it('increases the temperature', function () {
         thermostat.up(4);
-        expect(thermostat.degrees).toEqual(24);
+        expect(thermostat.currentTemperature()).toEqual(24);
     });
     it('decreases the temperature', function () {
         thermostat.down(2);
-        expect(thermostat.degrees).toEqual(18);
+        expect(thermostat.currentTemperature()).toEqual(18);
     });
 
     it('error message if the temperature < 10 degrees', function () {
@@ -42,4 +42,24 @@ describe('Thermostat', function () {
     it('defaults power saving mode to be on', function () {
         expect(thermostat.powerSavingMode()).toEqual(true);
     });
+    it('resets the temprature back to the default of 20 degrees', function () {
+        thermostat.up(3);
+        thermostat.reset();
+        expect(thermostat.currentTemperature()).toEqual(20);
+    });
+    describe('Energy usage', function () {
+        it('shows low usage if < 18 degrees', function () {
+            thermostat.down(3);
+            expect(thermostat.energyUsage()).toEqual(`low usage`)
+        });
+        it('shows medium usage if <=25 & >=18 degrees', function () {
+            expect(thermostat.energyUsage()).toEqual(`medium usage`)
+        });
+        it('shows high usage if >25 degrees', function () {
+            thermostat.powerSavingModeOff()
+            thermostat.up(7)
+            expect(thermostat.energyUsage()).toEqual(`high usage`)
+        });
+    });
 });
+

@@ -1,8 +1,8 @@
 'use strict';
 
 class Thermostat {
-    constructor(degrees = 20) {
-        this.degrees = degrees
+    constructor() {
+        this.degrees = 20
         this.psm = true
     }
     up(number) {
@@ -13,6 +13,10 @@ class Thermostat {
             throw new Error('Max temp is 32');
         }
         this.degrees += number;
+    }
+    currentTemperature() {
+        return this.degrees
+
     }
 
     down(number) {
@@ -31,5 +35,17 @@ class Thermostat {
     }
     powerSavingModeOff() {
         this.psm = false;
+    }
+    reset() {
+        this.degrees = 20;
+    }
+    energyUsage() {
+        if (this.degrees < 18) {
+            return `low usage`;
+        }
+        if (this.degrees > 25) {
+            return `high usage`;
+        }
+        return `medium usage`;
     }
 }
